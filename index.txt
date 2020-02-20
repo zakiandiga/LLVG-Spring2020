@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Language Learning Serious Game (Spring 2020)</title>
+  <meta name="description" content="My portfolio for Language Learning Video Game Class in American University on spring 2020">
+  <meta name="author" content="Zaki Agraraharja">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="jumbotron m-0">
+    <h1 class="display-4">Zaki Agrarahja</h1>
+    <p class="lead">My games from Language Learning Video Game Class</p>
+  </div>
+  <div class="card">
+    <div class="card-header h3">Twine Party v1.0</div>
+    <div class="card-body row">
+      <div class="col-4">
+        <img class="img-fluid" src="./YOUR_IMAGE_FILENAME">
+      </div>
+      <div class="col-6">
+        A modification to the traditional War card game. Unlike original War where both players cannot choose which card to use, Mindful War allows players to decide which card to reveal from the three cards on their hand. In addition, there are cards that have special abilities which can modify the board or players hand. With these modifications, players can challenge their strategic thinking ability, which hopefully adds the fun!
+      </div>
+      <div class="col-2">
+        <a class="btn btn-primary btn-block" href="./LINK_TO_YOUR_PLAYABLE_GAME_OR_RULES_FOR_YOUR_GAME" role="button">PLAY</a>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</body>
+</html>
