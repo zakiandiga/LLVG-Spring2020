@@ -11,7 +11,17 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="LLVG Twine Party v1.0" startnode="16" creator="Twine" creator-version="2.3.5" ifid="B672B26B-6EBE-47ED-BA47-5A6D4B09888E" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="343,160" size="100,100">$title[The Unknown World]
+<tw-storydata name="LLVG Twine Party v1.0" startnode="16" creator="Twine" creator-version="2.3.5" ifid="B672B26B-6EBE-47ED-BA47-5A6D4B09888E" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-hook[name="sayit1"] 
+{
+	animation-duration: 0.3s;
+	animation-timing-function: steps(1, end);
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: fade-in-out;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="343,160" size="100,100">$title[The Unknown World]
 
 [Can you imagine living in a world where you can understand any words that people say?
 
@@ -60,7 +70,7 @@ You just arrive in an unknown world and about to meet the people who live there.
 
 $lu[Lu: $name! What a nice $hiddenPhrase[name]!
 Remember, in this world, it is called $bindo[nama].]
-(text-style: &quot;blink&quot;)[$lu[Say it for me please?]&lt;sayit1|]
+[$lu[Say it for me please?]&lt;sayit1|]
 
 (click: ?sayit1)
 [
@@ -216,7 +226,7 @@ You see many people hanging around, talk in a language you are not familiar. Tho
 Lestari just introduced to this world. You will meet more people here and learn their culture.
 
 [[Start-&gt;Chapter2.1 - Terima Kasih coming soon]]
-</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="531,541" size="100,100">	$narrator[Lestari takes you to a field.
+</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="563,447" size="100,100">	$narrator[Lestari takes you to a field.
 	You see people sit on the benches.
 	Some of them are talking... Some playing something like chess...
 	You overheard a couple arguing about food behind you...
@@ -236,20 +246,9 @@ Lestari just introduced to this world. You will meet more people here and learn 
 [[[Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding]]]
 (else:)
 [[[Looks like you need to repeat that once again!-&gt;Chapter1.3 - Saya/Anda]]]
-</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="167,158" size="100,100">{
+</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="167,157" size="100,100">{
 &lt;!-- Global variables --&gt;
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
-tw-hook[name=&quot;blinks&quot;] 
-	{
-	animation-duration: 0.5s;
-	animation-timing-function: steps(1, end);
-	animation-delay: 0s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-fill-mode: none;
-	animation-play-state: running;
-	animation-name: fade-in-out;
-	}
 }
 $title[The Unknown World]
 
