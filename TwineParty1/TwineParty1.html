@@ -43,7 +43,7 @@ But trust me! it is a wonderful fate! And you have me, to help you]
 (set: $lestari to (text-color: &quot;yellow&quot;))
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
 (set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
-]</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="499,161" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="499,160" size="100,100">{
 &lt;!-- Level Variables! --&gt;
 (set: $narrator to (text-style: &quot;italic&quot;))
 (set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
@@ -53,13 +53,14 @@ But trust me! it is a wonderful fate! And you have me, to help you]
 }
 $title[Chapter 1 - Introduction]
 
-Write description of chapter 1 here!
+You just arrive in an unknown world and about to meet the people who live there. You might know nothing about them now, but soon you will learn....
 
-[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="770,166" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="770,164" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
 (set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
+
 $lu[Lu: $name! What a nice $hiddenPhrase[name]!
 Remember, in this world, it is called $bindo[nama].]
-$lu[Say it for me please?]&lt;sayit1|
+(text-style: &quot;blink&quot;)[$lu[Say it for me please?]&lt;sayit1|]
 
 (click: ?sayit1)
 [
@@ -115,7 +116,7 @@ $lestari[Nama anda, (text-style: &quot;bold&quot;)[$name]]
 $narrator[She points at you]
 
 [[You try to immitate-&gt;Chapter1.3 - Saya/Anda]]
-</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1353,87" size="100,100">$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
+</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1353,86" size="100,100">$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
 
 $lestari[The Lady: Ah (text-style: &quot;bold&quot;)[$name], nama yang bagus!]
 $lestari[Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $narrator[She points at herself]
@@ -164,7 +165,7 @@ $lestari[Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $nar
 ]
 
 [[Let&#39;s see how it goes!-&gt;Chapter1.3.1 - Result]]
-</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1599,2" size="100,100">$lu[Lu: Oops, you make a mistake!]
+</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1578,27" size="100,100">$lu[Lu: Oops, you make a mistake!]
 (if: $ttemptSaya1 &gt; 1)
 [$lu[Lu: Try to notice her gesture!
 Lu: She was pointing at herself when she said $bindo[saya]
@@ -195,7 +196,7 @@ Lestari: Ayo, $bindo[saya] temani $bindo[anda] berkeliling]
 	(set: $helper to 2)
 ]
 
-[[You nod and say $bindo[terima kasih]-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1779,328" size="100,100">$narrator[And that is how your story in The Unknown World begin...
+[[You nod and say terima kasih-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1779,327" size="100,100">$narrator[And that is how your story in The Unknown World begin...
 You walk following Lestari entering the gate.
 You see many people hanging around, talk in a language you are not familiar. Though, you overheard some words that you just learned.]
 
@@ -210,11 +211,12 @@ You see many people hanging around, talk in a language you are not familiar. Tho
 (click: ?quit)
 	[(goto: &quot;Main Menu&quot;)]
 }
-</tw-passagedata><tw-passagedata pid="13" name="Chapter2 - Start" tags="" position="321,574" size="100,100">$title[Chapter 2 - When Someone Do You a Favor]
+</tw-passagedata><tw-passagedata pid="13" name="Chapter2 - Start" tags="" position="336,527" size="100,100">$title[Chapter 2 - When Someone Do You a Favor]
 
+Lestari just introduced to this world. You will meet more people here and learn their culture.
 
 [[Start-&gt;Chapter2.1 - Terima Kasih coming soon]]
-</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="697,641" size="100,100">	$narrator[Lestari takes you to a field.
+</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="531,541" size="100,100">	$narrator[Lestari takes you to a field.
 	You see people sit on the benches.
 	Some of them are talking... Some playing something like chess...
 	You overheard a couple arguing about food behind you...
@@ -230,20 +232,31 @@ You see many people hanging around, talk in a language you are not familiar. Tho
 }
 	$lestari[Lestari: Ini adalah $ch2v1, tempat penduduk Bandung melakukan banyak hal.]
 	
-	$narrator[Suddenly, you see a kind of ball in front of you]</tw-passagedata><tw-passagedata pid="15" name="Chapter1.3.1 - Result" tags="" position="1631,174" size="100,100">(if: $quest1 is 2)
+	$narrator[Suddenly, a ball made of leather hit you]</tw-passagedata><tw-passagedata pid="15" name="Chapter1.3.1 - Result" tags="" position="1631,174" size="100,100">(if: $quest1 is 2)
 [[[Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding]]]
 (else:)
 [[[Looks like you need to repeat that once again!-&gt;Chapter1.3 - Saya/Anda]]]
-</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="168,158" size="100,100">{
+</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="167,158" size="100,100">{
 &lt;!-- Global variables --&gt;
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
+tw-hook[name=&quot;blinks&quot;] 
+	{
+	animation-duration: 0.5s;
+	animation-timing-function: steps(1, end);
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: fade-in-out;
+	}
 }
 $title[The Unknown World]
 
 
 
 [[New Game-&gt;Opening]]
-[[Select Chapter-&gt;Chapter Selection]]</tw-passagedata><tw-passagedata pid="17" name="Chapter Selection" tags="" position="213,359" size="100,100">Coming Soon
+[[Select Chapter-&gt;Chapter Selection]]</tw-passagedata><tw-passagedata pid="17" name="Chapter Selection" tags="" position="176,374" size="100,100">Coming Soon
 
 [[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="633,162" size="100,100">$narrator[You see something floating approaching you!]
 {
