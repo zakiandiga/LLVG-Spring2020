@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="LLVG Twine Party v1.0" startnode="1" creator="Twine" creator-version="2.3.5" ifid="B672B26B-6EBE-47ED-BA47-5A6D4B09888E" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="405,170" size="100,100">(text-style: &quot;bold&quot;) [The Unknown World]
+<tw-storydata name="LLVG Twine Party v1.0" startnode="16" creator="Twine" creator-version="2.3.5" ifid="B672B26B-6EBE-47ED-BA47-5A6D4B09888E" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="343,160" size="100,100">$title[The Unknown World]
 
 [Can you imagine living in a world where you can understand any words that people say?
 
@@ -34,40 +34,45 @@ But trust me! it is a wonderful fate! And you have me, to help you]
 
 [[Let&#39;s start-&gt;Introduction1]]
 
-</tw-passagedata><tw-passagedata pid="2" name="Text Style Library" tags="" position="405,320" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="561,166" size="100,100">(set: $narrator to (text-style: &quot;italic&quot;))
+</tw-passagedata><tw-passagedata pid="2" name="Variables" tags="" position="990,648" size="100,100">$starter
+[
+(set: $narrator to (text-style: &quot;italic&quot;))
 (set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
 (set: $lu to (text-color: &quot;green&quot;))
-
-$narrator[You see something floating approaching you!]
-
-&lt;img width=&quot;320&quot; height=&quot;243&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/spiritGuardian.png&quot;&gt;
-
-$narrator[Yeah, it&#39;s me! Sorry, we have not enough people so I need to take the role as a narrator also!
-First of all, let&#39;s start with the introduction...]
-
-$lu[My $hiddenPhrase[name] is (text-style: &quot;bold&quot;)[Lu].
-I am a kind of... spirit guardian!
-Nobody in this world can see and hear me, exept you!
-
-Can you tell me your $hiddenPhrase[name]?]
-
-[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="713,182" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+(set: $lady1 to (text-color: &quot;yellow&quot;))
+(set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
 (set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
-
-$lu[Lu: $name! What a nice $hiddenPhrase[name]!
-Remember, in this world, it is called $bindo[nama].
-It is quite similar to how you say it in your world, right?
-So, if you ever hear or read that word, just remember that it has something to do with $hiddenPhrase[name]!
-
-Nice to meet you by the way!
-Now, if you ready, please cross that portal to really enter the world.
-And remember, call me if you need help!]
-
-[[&lt;img width=&quot;400&quot; height=&quot;400&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/firstGate.jpg&quot;&gt;
-Enter the portal-&gt;Chapter1.1 - Name, You, and I]]</tw-passagedata><tw-passagedata pid="5" name="Chapter1.1 - Name, You, and I" tags="" position="856,177" size="100,100">(set: $lady1 to (text-color: &quot;yellow&quot;))
+]</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="499,162" size="100,100">{
+&lt;!-- Level Variables! --&gt;
+(set: $narrator to (text-style: &quot;italic&quot;))
+(set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
+(set: $lu to (text-color: &quot;green&quot;))
+(set: $lady1 to (text-color: &quot;yellow&quot;))
 (set: $helper to 0)
+}
+$title[Chapter 1 - Introduction]
 
-$narrator[You enter the portal, and suddenly, now you are in an open-air field. There is a huge gate in front of you.
+Write description of chapter 1 here!
+
+[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="770,166" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+(set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
+$lu[Lu: $name! What a nice $hiddenPhrase[name]!
+Remember, in this world, it is called $bindo[nama].]
+$lu[Say it for me please?]&lt;sayit1|
+
+(click: ?sayit1)
+[
+	(set: _saynama to (lowercase:(prompt: &quot;Say it for me please?&quot;, &quot;&quot;)))
+	(if: _saynama is &quot;nama&quot;)
+		[
+		(link: &quot;Nice!&quot;)[(goto: &quot;Introduction2Right&quot;)]
+		]
+	(else:)
+		[
+		(link: &quot;No no no, try again?&quot;)[(goto: &quot;introduction2wrong&quot;)]
+		]
+]</tw-passagedata><tw-passagedata pid="5" name="Chapter1.1 - Name, You, and I" tags="" position="1057,166" size="100,100">$narrator[You enter the portal, and suddenly, now you are in an open-air field. There is a huge gate in front of you.
 You can see through the gate and it looks like there are many people doing various activity.
 You see a lady approaches you.]
 
@@ -89,7 +94,7 @@ Siapa nama anda?]
 
 
 
-</tw-passagedata><tw-passagedata pid="6" name="Chapter1.2.1 - Name" tags="" position="1015,98" size="100,100">$lady1[The Lady: Nama anda?] $narrator[She point at you politely with smile]
+</tw-passagedata><tw-passagedata pid="6" name="Chapter1.2.1 - Name" tags="" position="1217,89" size="100,100">$lady1[The Lady: Nama $bindo[anda]?]   $narrator[She point at you politely with smile]
 
 [Ask Lu again]&lt;asklu|
 (click: ?asklu)
@@ -100,16 +105,17 @@ Siapa nama anda?]
 ]
 
 [[Nama saya... $name-&gt;Chapter1.2.3 - Name3]]
-[[Nama anda... $name-&gt;Chapter1.2.2 - Name]]</tw-passagedata><tw-passagedata pid="7" name="Chapter1.2.2 - Name" tags="" position="1011,252" size="100,100">$narrator[The lady giggling...]
+[[Nama anda... $name-&gt;Chapter1.2.2 - Name]]</tw-passagedata><tw-passagedata pid="7" name="Chapter1.2.2 - Name" tags="" position="1216,240" size="100,100">$narrator[The lady giggling...]
 
-$lady1[The Lady: Nama saya (text-style: &quot;bold&quot;)[Lestari]] $narrator[She points at herself]
-$lady1[Lestari: Nama anda, (text-style: &quot;bold&quot;)[$name]] $narrator[She points at you]
+$lady1[The Lady: Nama saya (text-style: &quot;bold&quot;)[Lestari]]   $narrator[She points at herself]
+$lady1[Nama anda, (text-style: &quot;bold&quot;)[$name]]   $narrator[She points at you]
 
 [[You try to immitate-&gt;Chapter1.3 - Saya/Anda]]
-</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1168,94" size="100,100">$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
+</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1353,88" size="100,100">(link: &quot;Variables&quot;)
+$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
 
 $lady1[The Lady: Ah (text-style: &quot;bold&quot;)[$name], nama yang bagus!]
-$lady1[The Lady: Perkenalkan, saya (text-style: &quot;bold&quot;)[Lestari]] $narrator[She points at herself]
+$lady1[The Lady: Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $narrator[She points at herself]
 
 [Lu want to tell you something]&lt;luannounce|
 (click: ?luannounce)
@@ -120,24 +126,28 @@ $lady1[The Lady: Perkenalkan, saya (text-style: &quot;bold&quot;)[Lestari]] $nar
 ]
 ]
 
-[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1302,176" size="100,100">(set: $attemptSaya1 to 0)
+[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1486,167" size="100,100">{
+(set: $attemptSaya1 to 0)
 (set: $quest1 to 0)
-[You: Saya...]
-[$name]&lt;correct1|  [Lestari]&lt;wrong1|
+}
+[$name: Saya...]
+[$name]&lt;correct1| || [Lestari]&lt;wrong1|
 (click: ?correct1)
-[
+	[
 	(replace: ?wrong1)[]
-	[$lu[You are correct!]]
+	[$lu[Lu: You are correct!]]
 	(set: $quest1 to it + 1)
-]
+	]
 (click: ?wrong1)
-[
+	[
 	(set: $attemptSaya1 to it + 1)
-	(goto: &#39;Chapter 1.1.2 - Saya/Anda 1 Salah&#39;)
-]
+	(goto: &#39;Chapter1.3.1 - Saya/Anda 1 Salah&#39;)
+	]
 
-[You: Anda...]
-[$name]&lt;wrong2|  [Lestari]&lt;correct2|
+(click: ?next1)
+[$name: Anda...]
+[$name]&lt;wrong2| || [Lestari]&lt;correct2|
+
 (click: ?correct2)
 [
 	(replace: ?wrong2)[]
@@ -147,17 +157,18 @@ $lady1[The Lady: Perkenalkan, saya (text-style: &quot;bold&quot;)[Lestari]] $nar
 (click: ?wrong2)
 [
 	(set: $attemptSaya1 to it +1)
-	(goto: &#39;Chapter 1.1.2 - Saya/Anda 1 Salah&#39;)
+	(goto: &#39;Chapter1.3.1 - Saya/Anda 1 Salah&#39;)
 ]
 
-[[Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding]]</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1383,11" size="100,100">$lu[Lu: Oops, you make a mistake!]
+[[Let&#39;s see how it goes!-&gt;Chapter1.3.1 - Result]]
+</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1599,2" size="100,100">$lu[Lu: Oops, you make a mistake!]
 (if: $ttemptSaya1 &gt; 1)
 [$lu[Lu: Try to notice her gesture!
 Lu: She was pointing at herself when she said $bindo[saya]
 Lu: And she was pointing at you when she said $bindo[anda]
 Lu: Do you recognize anything?]]
 
-[[Try again-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="11" name="Chapter1.4 - ChapterEnding" tags="" position="1476,173" size="100,100">$lu[Lu: Great!
+[[Try again-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="11" name="Chapter1.4 - ChapterEnding" tags="" position="1778,174" size="100,100">$lu[Lu: Great!
 You just made your first conversation with the local of this world!
 It is not so bad, right?
 Lu: Don&#39;t worry, people who live here are nice, especially to those who just came here.
@@ -181,15 +192,103 @@ Lestari: Ayo, $bindo[saya] temani $bindo[anda] berkeliling]
 	(set: $helper to 2)
 ]
 
-[[You nod and say $bindo[terima kasih]-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1480,330" size="100,100">$narrator[And that is how your story in The Unknown World begin...
+[[You nod and say $bindo[terima kasih]-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1779,328" size="100,100">$narrator[And that is how your story in The Unknown World begin...
 You walk following Lestari entering the gate.
 You see many people hanging around, talk in a language you are not familiar. Though, you overheard some words that you just learned.]
 
-Chapter One End
+(text-style: &quot;bold&quot;)[Chapter One End]
 
-[[Start Chapter 2-&gt;Chapter2.1 TerimaKasih]]</tw-passagedata><tw-passagedata pid="13" name="Chapter2.1 TerimaKasih" tags="" position="201,637" size="100,100">COMING SOON
+[Start Chapter 2]&lt;chapter2|
 
-[[Play again?-&gt;Opening]]</tw-passagedata></tw-storydata>
+[Quit]&lt;quit|
+{
+(click: ?chapter2)
+	[(goto: &quot;Chapter2 - Start&quot;)]
+(click: ?quit)
+	[(goto: &quot;Main Menu&quot;)]
+}
+</tw-passagedata><tw-passagedata pid="13" name="Chapter2 - Start" tags="" position="321,574" size="100,100">$title[Chapter 2 - When Someone Do You a Favor]
+
+
+[[Start-&gt;Chapter2.1 - Terima Kasih coming soon]]
+</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="697,641" size="100,100">	$narrator[Lestari takes you to a field.
+	You see people sit on the benches.
+	Some of them are talking... Some playing something like chess...
+	You overheard a couple arguing about food behind you...
+	It looks like a park, where people can come and do anything here
+	
+	Then Lestari talks to you]
+	
+{
+	(set: $ch2v1 to &quot;[balai kota]&lt;trans|&quot;)
+	(set: $ch2v2 to &quot;[city hall]&lt;transb|&quot;)
+	(click: ?trans) [(replace: ?trans) [$ch2v2]]
+	(click: ?transb) [(replace: ?transb) [$ch2v1]]
+}
+	$lady1[Lestari: Ini adalah $ch2v1, tempat penduduk Bandung melakukan banyak hal.]
+	
+	$narrator[Suddenly, you see a kind of ball in front of you]</tw-passagedata><tw-passagedata pid="15" name="Chapter1.3.1 - Result" tags="" position="1631,175" size="100,100">(if: $quest1 is 2)
+[[[Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding]]]
+(else:)
+[[[Looks like you need to repeat that once again!-&gt;Chapter1.3 - Saya/Anda]]]
+</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="168,158" size="100,100">{
+&lt;!-- Global variables --&gt;
+(set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
+}
+$title[The Unknown World]
+
+
+
+[[New Game-&gt;Opening]]
+[[Select Chapter-&gt;Chapter Selection]]</tw-passagedata><tw-passagedata pid="17" name="Chapter Selection" tags="" position="169,323" size="100,100">Coming Soon
+
+[[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="633,162" size="100,100">$narrator[You see something floating approaching you!]
+{
+&lt;img width=&quot;320&quot; height=&quot;243&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/spiritGuardian.png&quot;&gt;
+}
+$narrator[Yeah, it&#39;s me! Sorry, we don&#39;t have enough people, so I need to take the role as a narrator also!
+First of all, let&#39;s start with the introduction...]
+
+$lu[I am (text-style: &quot;bold&quot;)[Lu].
+I am a kind of... spirit guardian!
+Nobody in this world can see and hear me, exept you!
+
+Can you tell me your $hiddenPhrase[name]?]
+
+[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="19" name="Temporary Intro2" tags="" position="824,642.5" size="100,100">&lt;!-- Need to seperate the part below to other passages --&gt;
+ It is quite similar to how you say it in your world, right?
+So, if you ever hear or read that word, just remember that it has something to do with $hiddenPhrase[name]!
+
+Nice to meet you by the way!
+Now, if you ready, please cross that portal to really enter the world.
+And remember, call me if you need help!]]
+
+[[&lt;img width=&quot;400&quot; height=&quot;400&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/firstGate.jpg&quot;&gt;
+Enter the portal-&gt;Chapter1.1 - Name, You, and I]]</tw-passagedata><tw-passagedata pid="20" name="Introduction2Right" tags="" position="925,104.5" size="100,100">$lu[Lu: It is quite similar to how you say it in your world, right?
+So, if you ever hear or read that word, just remember that it has something to do with $hiddenPhrase[name]!
+
+Nice to meet you by the way!
+Now, if you ready, please cross that portal to really enter the world.
+And remember, call me if you need help!]
+
+[[&lt;img width=&quot;400&quot; height=&quot;400&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/firstGate.jpg&quot;&gt;
+Enter the portal-&gt;Chapter1.1 - Name, You, and I]]</tw-passagedata><tw-passagedata pid="21" name="introduction2wrong" tags="" position="918,253.5" size="100,100">$lu[Lu: Nama]
+|sayit2&gt;[$lu[Say it?]]
+
+(click: ?sayit2)
+[
+	(set: _saynama to (lowercase:(prompt: &quot;Say it for me please?&quot;, &quot;&quot;)))
+	(if: _saynama is &quot;nama&quot;)
+		[
+		(link: &quot;Nice!&quot;)[(goto: &quot;Introduction2Right&quot;)]
+		]
+	(else:)
+		[
+		(link: &quot;No no no, try again?&quot;)[(goto: &quot;introduction2wrong&quot;)]
+		]
+]</tw-passagedata><tw-passagedata pid="22" name="Chapter2.1 - Terima Kasih coming soon" tags="" position="114,647" size="100,100">Coming Soon
+
+[[Restart Game-&gt;Main Menu]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
