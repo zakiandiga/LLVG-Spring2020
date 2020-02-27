@@ -44,7 +44,7 @@ But trust me! it is a wonderful fate! And you have me, to help you]
 
 [[Let&#39;s start-&gt;Introduction1]]
 
-</tw-passagedata><tw-passagedata pid="2" name="Variables" tags="" position="990,648" size="100,100">$starter
+</tw-passagedata><tw-passagedata pid="2" name="Variables" tags="" position="226,841" size="100,100">$starter
 [
 (set: $narrator to (text-style: &quot;italic&quot;))
 (set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
@@ -53,37 +53,35 @@ But trust me! it is a wonderful fate! And you have me, to help you]
 (set: $lestari to (text-color: &quot;yellow&quot;))
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
 (set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
-]</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="499,160" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="3" name="Introduction1" tags="" position="501,162" size="100,100">{
 &lt;!-- Level Variables! --&gt;
 (set: $narrator to (text-style: &quot;italic&quot;))
 (set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
+(set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
 (set: $lu to (text-color: &quot;green&quot;))
 (set: $lestari to (text-color: &quot;yellow&quot;))
-(set: $helper to 0)
+(set: $teguh to (text-color: &quot;blue&quot;))
 }
 $title[Chapter 1 - Introduction]
 
 You just arrive in an unknown world and about to meet the people who live there. You might know nothing about them now, but soon you will learn....
 
-[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="770,164" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
-(set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
+[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="766,154" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+
 
 $lu[Lu: $name! What a nice $hiddenPhrase[name]!
 Remember, in this world, it is called $bindo[nama].]
 [$lu[Say it for me please?]&lt;sayit1|]
 
-(click: ?sayit1)
-[
+(click: ?sayit1)[
 	(set: _saynama to (lowercase:(prompt: &quot;Say it for me please?&quot;, &quot;&quot;)))
-	(if: _saynama is &quot;nama&quot;)
-		[
+	(if: _saynama is &quot;nama&quot;)[
 		(link: &quot;Nice!&quot;)[(goto: &quot;Introduction2Right&quot;)]
 		]
-	(else:)
-		[
+	(else:)[
 		(link: &quot;No no no, try again?&quot;)[(goto: &quot;introduction2wrong&quot;)]
 		]
-]</tw-passagedata><tw-passagedata pid="5" name="Chapter1.1 - Name, You, and I" tags="" position="1057,165" size="100,100">$narrator[You enter the portal, and suddenly, now you are in an open-air field. There is a huge gate in front of you.
+]</tw-passagedata><tw-passagedata pid="5" name="Chapter1.1 - Name, You, and I" tags="" position="1057,165" size="100,100">$narrator[You enter the portal, and suddenly, you are in an open-air field. There is a huge gate in front of you.
 You can see through the gate and it looks like there are many people doing various activity.
 You see a lady approaches you.]
 
@@ -112,7 +110,7 @@ $narrator[She point at you politely with smile]
 (click: ?asklu)
 [
 	(replace: ?asklu)
-	[$lu[Lu: Now she made it clear! Maybe she ask your $hiddenPhrase[name]?]
+	[$lu[Lu: Now she made it clear! Maybe she ask your $hiddenPhrase[name]?]]
 	(set: $helper to 1)
 ]
 
@@ -126,7 +124,7 @@ $lestari[Nama anda, (text-style: &quot;bold&quot;)[$name]]
 $narrator[She points at you]
 
 [[You try to immitate-&gt;Chapter1.3 - Saya/Anda]]
-</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1353,86" size="100,100">$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
+</tw-passagedata><tw-passagedata pid="8" name="Chapter1.2.3 - Name3" tags="" position="1352,86" size="100,100">$narrator[After you tell her your name, are speechless, don&#39;t know what to say. But the lady suddenly reply you]
 
 $lestari[The Lady: Ah (text-style: &quot;bold&quot;)[$name], nama yang bagus!]
 $lestari[Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $narrator[She points at herself]
@@ -135,67 +133,60 @@ $lestari[Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $nar
 (click: ?luannounce)
 [
 	(replace: ?luannounce)
-	[$lu[Lu: Ah, you learn fast! I don&#39;t even need to tell you about $bindo[saya] and $bindo[anda], right?]
+	[$lu[Lu: Ah, you learn fast! I don&#39;t even need to tell you about $bindo[saya], right?]
 	(set: $helper to it - 1)
 ]
 ]
 
-[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1486,164" size="100,100">{
-(set: $attemptSaya1 to 0)
+[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1487,161" size="100,100">{
 (set: $quest1 to 0)
 }
 [$name: Saya...]
 [$name]&lt;correct1| || [Lestari]&lt;wrong1|
-(click: ?correct1)
-	[
+(click: ?correct1)[
 	(replace: ?wrong1)[]
 	[$lu[Lu: You are correct!]]
 	(set: $quest1 to it + 1)
-	]
-(click: ?wrong1)
-	[
-	(set: $attemptSaya1 to it + 1)
+]
+(click: ?wrong1)[
 	(goto: &#39;Chapter1.3.1 - Saya/Anda 1 Salah&#39;)
-	]
+]
 
-(click: ?next1)
 [$name: Anda...]
 [$name]&lt;wrong2| || [Lestari]&lt;correct2|
 
-(click: ?correct2)
-[
+
+(click: ?correct2)[
 	(replace: ?wrong2)[]
 	[$lu[Great!]]
 	(set: $quest1 to it + 1)
 ]
-(click: ?wrong2)
-[
-	(set: $attemptSaya1 to it +1)
+(click: ?wrong2)[
 	(goto: &#39;Chapter1.3.1 - Saya/Anda 1 Salah&#39;)
 ]
 
 {
-(live: 0.5s)
-	[
-	(if: $quest1 is 2)
-		[
+(live: 1.5s)[
+	(if: $quest1 is 2)[
 		[[Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding]](stop:)
-		]
 	]
+]
 }
-</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1578,27" size="100,100">$lu[Lu: Oops, you make a mistake!]
-(if: $ttemptSaya1 &gt; 1)
-[$lu[Lu: Try to notice her gesture!
-Lu: She was pointing at herself when she said $bindo[saya]
-Lu: And she was pointing at you when she said $bindo[anda]
-Lu: Do you recognize anything?]]
-
-[[Try again-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="11" name="Chapter1.4 - ChapterEnding" tags="" position="1696,171" size="100,100">$lu[Lu: Great!
+</tw-passagedata><tw-passagedata pid="10" name="Chapter1.3.1 - Saya/Anda 1 Salah" tags="" position="1577,26" size="100,100">$lu[Lu: Oops, you make a mistake!]
+(if: $attemptSaya1 &gt; 1)[
+$lu[Lu: Try to notice her gesture!
+She was pointing at herself when she said $bindo[saya]
+And she was pointing at you when she said $bindo[anda]
+Do you recognize anything?]
+]
+(set: $attemptSaya1 to it + 1)
+[[Try again-&gt;Chapter1.3 - Saya/Anda]]
+</tw-passagedata><tw-passagedata pid="11" name="Chapter1.4 - ChapterEnding" tags="" position="1686,249" size="100,100">$lu[Lu: Great!
 You just made your first conversation with the local of this world!
 It is not so bad, right?
-Lu: Don&#39;t worry, people who live here are nice, especially to those who just came here.
-Lu: You will learn everything faster than you thought!
-Lu: Never give up!]
+Don&#39;t worry, people who live here are nice, especially to those who just came here.
+You will learn everything faster than you thought!
+Never give up!]
 
 $narrator[It looks like Lestari ask you to come with her.
 She wave her hand, pointing to the otherside of the gate]
@@ -208,14 +199,14 @@ Lestari: Ayo, $bindo[saya] temani $bindo[anda] berkeliling]
 [
 	(replace: ?asklu2)
 	[$lu[Lu: Wow, she offers to accompany you to walk around the place!
-	Lu: She is so helpful, and I don&#39;t think you have any other option now anyway.
-	Lu: Oh, say $bindo[terima kasih] to her now!
-	Lu: You will learn what it means later, but just say it to her now please.]]
+	She is so helpful, and I don&#39;t think you have any other option now anyway.
+	Oh, say $bindo[terima kasih] to her now!
+	You will learn what it means later, but just say it to her now please.]]
 	(set: $helper to 2)
 ]
 
-[[You nod and say terima kasih-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1854,277" size="100,100">$narrator[And that is how your story in The Unknown World begin...
-You walk following Lestari entering the gate.
+[[You nod and say *terima kasih*-&gt;Chapter1.4.1 - Chapter ending]]</tw-passagedata><tw-passagedata pid="12" name="Chapter1.4.1 - Chapter ending" tags="" position="1854,273" size="100,100">$narrator[And that is how your story in The Unknown World begin...
+You walk with Lestari entering the gate.
 You see many people hanging around, talk in a language you are not familiar. Though, you overheard some words that you just learned.]
 
 (text-style: &quot;bold&quot;)[Chapter One End]
@@ -229,12 +220,35 @@ You see many people hanging around, talk in a language you are not familiar. Tho
 (click: ?quit)
 	[(goto: &quot;Main Menu&quot;)]
 }
-</tw-passagedata><tw-passagedata pid="13" name="Chapter2 - Start" tags="" position="336,527" size="100,100">$title[Chapter 2 - When Someone Do You a Favor]
+</tw-passagedata><tw-passagedata pid="13" name="Chapter2 - Start" tags="" position="348,507" size="100,100">{
+&lt;!-- Level Variables! --&gt;
+(set: $narrator to (text-style: &quot;italic&quot;))
+(set: $hiddenPhrase to (text-style: &quot;blurrier&quot;))
+(set: $bindo to (text-style: &quot;mark&quot;) + (text-style: &quot;italic&quot;))
+(set: $lu to (text-color: &quot;green&quot;))
+(set: $lestari to (text-color: &quot;yellow&quot;))
+(set: $teguh to (text-color: &quot;blue&quot;))
+(if: $name is 0)[
+	(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+	]
+}
+$title[Chapter 2 - When Someone Does You a Favor]
 
-Lestari just introduced to this world. You will meet more people here and learn their culture.
+Lestari just introduced you to this world. You will meet more people here and learn their culture.
 
-[[Start-&gt;Chapter2.1 - Terima Kasih coming soon]]
-</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="563,447" size="100,100">	$narrator[Lestari takes you to a field.
+[[Start-&gt;Chapter2.1 - Terima Kasih]]
+</tw-passagedata><tw-passagedata pid="14" name="Chapter2.1 - Terima Kasih" tags="" position="510,506" size="100,100">{
+	(set: $ch2v1 to &quot;[balai kota]&lt;transa|&quot;)
+	(set: $ch2v2 to &quot;[city hall]&lt;transb|&quot;)
+	(click: ?transa) [(replace: ?transa) [$ch2v2]]
+	(click: ?transb) [(replace: ?transb) [$ch2v1]]
+	(set: $ch2v3 to &quot;[orang-orang]&lt;transc|&quot;)
+	(set: $ch2v4 to &quot;[people]&lt;transd|&quot;)
+	(click: ?transc) [(replace: ?transc) [$ch2v4]]
+	(click: ?transd) [(replace: ?transd) [$ch2v3]]
+}
+
+	$narrator[Lestari takes you to a field.
 	You see people sit on the benches.
 	Some of them are talking... Some playing something like chess...
 	You overheard a couple arguing about food behind you...
@@ -242,19 +256,25 @@ Lestari just introduced to this world. You will meet more people here and learn 
 	
 	Then Lestari talks to you]
 	
-{
-	(set: $ch2v1 to &quot;[balai kota]&lt;trans|&quot;)
-	(set: $ch2v2 to &quot;[city hall]&lt;transb|&quot;)
-	(click: ?trans) [(replace: ?trans) [$ch2v2]]
-	(click: ?transb) [(replace: ?transb) [$ch2v1]]
-}
-	$lestari[Lestari: Ini adalah $ch2v1, tempat penduduk Bandung melakukan banyak hal.]
+
+	$lestari[Lestari: Ini adalah $ch2v1, tempat $ch2v3 Bandung melakukan banyak hal.]
 	
-	$narrator[Suddenly, a ball made of leather hit you]</tw-passagedata><tw-passagedata pid="15" name="Chapter1.3.1 - Result" tags="" position="2026,81" size="100,100">&lt;!-- (if: $quest1 is 2)
+[Lu want to say something!]&lt;trivialu1|
+(click: ?trivialu1)
+[
+	(replace: ?trivialu1)
+	[$lu[Lu: One thing that you might want to know. For most words in their language, they use repetition to make it plural.
+	They call this repeating words *kata ulang*.
+	Here, Lestari uses *kata ulang* to transform something singular to plural. 
+	But please be aware that they use *kata ulang* to express other things.]]
+	(set: $helper to it + 1)
+]
+
+[[You continue walk with Lestari-&gt; Chapter2.1.1 - Terima Kasih]]</tw-passagedata><tw-passagedata pid="15" name="Chapter1.3.1 - Result" tags="" position="2027,82" size="100,100">&lt;!-- (if: $quest1 is 2)
 Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding
 (else:) --&gt;
 Looks like you need to repeat that once again!-&gt;Chapter1.3 - Saya/Anda
-</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="167,157" size="100,100">{
+</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="170,159" size="100,100">{
 &lt;!-- Global variables --&gt;
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
 }
@@ -263,9 +283,11 @@ $title[The Unknown World]
 
 
 [[New Game-&gt;Opening]]
-[[Select Chapter-&gt;Chapter Selection]]</tw-passagedata><tw-passagedata pid="17" name="Chapter Selection" tags="" position="176,374" size="100,100">Coming Soon
+[[Select Chapter-&gt;Chapter Selection]]</tw-passagedata><tw-passagedata pid="17" name="Chapter Selection" tags="" position="175,356" size="100,100">[[Chapter 1 - Introduction-&gt;Introduction1]]
 
-[[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="633,162" size="100,100">$narrator[You see something floating approaching you!]
+[[Chapter 2 - When Someone does You a Favor-&gt;Chapter2 - Start]]
+
+[[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="636,160" size="100,100">$narrator[You see something floating approaches you!]
 {
 &lt;img width=&quot;320&quot; height=&quot;243&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/spiritGuardian.png&quot;&gt;
 }
@@ -278,7 +300,7 @@ Nobody in this world can see and hear me, exept you!
 
 Can you tell me your $hiddenPhrase[name]?]
 
-[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="19" name="Temporary Intro2" tags="" position="824,642" size="100,100">&lt;!-- Need to seperate the part below to other passages --&gt;
+[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="19" name="Testing passage" tags="" position="267,673" size="100,100">&lt;!-- Need to seperate the part below to other passages --&gt;
  It is quite similar to how you say it in your world, right?
 So, if you ever hear or read that word, just remember that it has something to do with $hiddenPhrase[name]!
 
@@ -287,7 +309,9 @@ Now, if you ready, please cross that portal to really enter the world.
 And remember, call me if you need help!]]
 
 [[&lt;img width=&quot;400&quot; height=&quot;400&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/firstGate.jpg&quot;&gt;
-Enter the portal-&gt;Chapter1.1 - Name, You, and I]]</tw-passagedata><tw-passagedata pid="20" name="Introduction2Right" tags="" position="925,104" size="100,100">$lu[Lu: It is quite similar to how you say it in your world, right?
+Enter the portal-&gt;Chapter1.1 - Name, You, and I]]
+
+Don&#39;t you recognise me? (hidden:)|truth&gt;[I&#39;m your OC, brought to life!]</tw-passagedata><tw-passagedata pid="20" name="Introduction2Right" tags="" position="925,103" size="100,100">$lu[Lu: It is quite similar to how you say it in your world, right?
 So, if you ever hear or read that word, just remember that it has something to do with $hiddenPhrase[name]!
 
 Nice to meet you by the way!
@@ -309,7 +333,270 @@ Enter the portal-&gt;Chapter1.1 - Name, You, and I]]</tw-passagedata><tw-passage
 		[
 		(link: &quot;No no no, try again?&quot;)[(goto: &quot;introduction2wrong&quot;)]
 		]
-]</tw-passagedata><tw-passagedata pid="22" name="Chapter2.1 - Terima Kasih coming soon" tags="" position="114,647" size="100,100">Coming Soon
+]</tw-passagedata><tw-passagedata pid="22" name="Chapter2.1 - Terima Kasih coming soon" tags="" position="60,632" size="100,100">Coming Soon
+
+[[Restart Game-&gt;Main Menu]]</tw-passagedata><tw-passagedata pid="23" name="Word List" tags="" position="90,771" size="100,100">X Saya
+X Anda
+X Nama
+X Terima Kasih
+Maaf
+Selamat
+Depan
+Belakang
+Kiri
+Kanan
+hati-hati
+
+&lt;--!Incidental words--&gt;
+X Aku
+X Kamu
+Balai Kota
+X Ya
+X Tidak</tw-passagedata><tw-passagedata pid="24" name=" Chapter2.1.1 - Terima Kasih" tags="" position="710,478" size="100,100">$narrator[You arrive at the field where children play throw and catch ball.
+Suddenly, you see a ball comes at Lestari&#39;s head!]
+
+[[In a blink of an eye you catch the ball before it hits her!-&gt;Chapter2.1.2 - Terima Kasih]]</tw-passagedata><tw-passagedata pid="25" name="Chapter2.1.2 - Terima Kasih" tags="" position="708,635" size="100,100">{
+	(set: $ch2v5 to &quot;[hampir saja]&lt;trans5|&quot;)
+	(set: $ch2v6 to &quot;[almost]&lt;trans6|&quot;)
+	(click: ?trans5) [(replace: ?trans5) [$ch2v6]]
+	(click: ?trans6) [(replace: ?trans6) [$ch2v5]]
+}
+
+$narrator[What a good reflex!
+Lestari looks surprised.]
+
+$lestari[Lestari: Ah! $ch2v5! Untung anda menangkapnya!
+$bindo[Terima kasih]!]
+
+[Lu want to say something!]&lt;trivialu2|
+(click: ?trivialu2)
+	[
+	(replace: ?trivialu2)
+	[$lu[Lu: $bindo[Terima kasih]! Remember that word?
+	She said it!
+	Can you catch the pattern here?
+	If not, I&#39;m pretty sure you&#39;ll find out soon!]]
+	]
+
+
+[[Then you see a boy approches you-&gt;Chapter2.1.3 - Terima Kasih]]</tw-passagedata><tw-passagedata pid="26" name="Chapter2.1.3 - Terima Kasih" tags="" position="704,804" size="100,100">{
+	(set: $ch2v7 to &quot;[balai kota]&lt;transa|&quot;)
+	(set: $ch2v8 to &quot;[city hall]&lt;transb|&quot;)
+	(click: ?transa) [(replace: ?transa) [$ch2v8]]
+	(click: ?transb) [(replace: ?transb) [$ch2v7]]
+}
+$narrator[As the boy comes closer, Lestari ask to take the ball from you, and you give it to her.
+Lestari then talks to the boy. It looks like they know each other.]
+
+$lestari[Lestari: Apa ini bola $bindo[kamu]?]
+$teguh[The boy: Ya, betul.
+$bindo[Maaf], $bindo[aku] tidak sengaja.]
+$lestari[Lestari: Tidak apa-apa, ini aku kembalikan.
+Hati-hati ya.]    $narrator[Lestari give the ball to the boy.]
+$teguh[The boy: Ya, $bindo[Terima kasih]!]
+
+$narrator[They talk quite a lot. You understand almost nothing.]
+
+[Lu want to say something!]&lt;trivialu1|
+(click: ?trivialu1)
+[
+	(replace: ?trivialu1)
+	[$lu[Lu: Things getting more complicated, isn&#39;t it?
+	Don&#39;t worry, I&#39;ll help you with this.
+	But first thing first, 
+	do you need my help to understand what are they talking about? 
+	Or can you figure it out yourself?
+	
+	Either way, I&#39;ll take you to my realm now!]
+	[[Get into Lu&#39;s Realm-&gt;Chapter2.1.3 - Lu&#39;s Realm1]]]
+]</tw-passagedata><tw-passagedata pid="27" name="Chapter 1 - Introduction-&gt;" tags="" position="186,513" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="28" name="Chapter2.1.4 - Branching" tags="" position="115,1024" size="100,100">(click: ?trivialu1)
+[
+	(replace: ?trivialu1)
+	[$lu[Lu: Things getting more complicated, isn&#39;t it?
+	Don&#39;t worry, I&#39;ll help you with this.
+	But first thing first, 
+	do you need my help to understand what are they talking about? 
+	Or can you figure it out yourself?]
+	[[Your answer-&gt;Chapter2.1.5 - Next title]]]
+]</tw-passagedata><tw-passagedata pid="29" name="Chapter2.1.5 - Next title" tags="" position="308,1026" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="30" name="Chapter2.1.4 - Figure out yourself" tags="" position="1130,443" size="100,100">$lu[Lu: Alright then, take your time.
+After you figure out, let&#39;s practice a bit before I send you back to the outside!]
+
+[Lu: Oh, and I&#39;ll bring back that moment again if you need!]&lt;sayit1|
+|flashback)[
+	$lestari[Lestari: Apa ini bola $bindo[kamu]?]
+	$teguh[The boy: Ya, betul.
+	$bindo[Maaf], $bindo[aku] tidak sengaja.]
+	$lestari[Lestari: Tidak apa-apa, ini aku kembalikan.
+	Hati-hati ya.]    $narrator[Lestari give the ball to the boy.]
+	$teguh[The boy: Ya, $bindo[Terima kasih]!]
+
+	$lu[Lu: So, how do you think?]
+	]
+{
+(click-replace: ?sayit1)[
+	(show: ?flashback)
+]
+}
+[[Ready to practice-&gt;Chapter2.1.5 - Practice1]]
+(event: when time &gt; 4s)[
+	[[Change your mind, Ask Lu for help-&gt;Chapter2.2.4 - Lu Guidance - Terima Kasih]]
+]</tw-passagedata><tw-passagedata pid="31" name="Chapter2.2.4 - Lu Guidance - Terima Kasih" tags="" position="1134,628" size="100,100">$lu[Lu: Alright first, $bindo[terima kasih]
+Do you actually know what it means?
+How do you usually express it?]
+
+[$lu[Say it for me please?]&lt;sayit1|]
+
+(click: ?sayit1)[
+	(set: _saythanks to (lowercase:(prompt: &quot;Say it for me please?&quot;, &quot;&quot;)))
+	(if: (_saythanks is &quot;thanks&quot;) or (_saythanks is &quot;thank you&quot;))[
+		(link: &quot;Great, you got it!&quot;)[(goto: &quot;Chapter2.2.4.1 - Lu Guidance - Terima Kasih - Correct&quot;)]
+	]
+	(else:)[
+		(link: &quot;Nope...&quot;)[(goto: &quot;Chapter2.2.4.2 - Lu Guidance - Terima Kasih - Wrong&quot;)]
+	]
+]</tw-passagedata><tw-passagedata pid="32" name="Chapter2.1.3 - Lu&#39;s Realm1" tags="" position="913,578" size="100,100">$narrator[Suddenly you feel like dreaming, and you see nobody.
+Then Lu appear in front of you.]
+
+$lu[Welcome to my realm!
+Here you cannot make contact with anything beyond.
+But don&#39;t worry, I can send you back to the outside anytime!
+Also, I need to remind you that as long as you are here, the time outside my realm is stopped. It&#39;s cool, isn&#39;t it?
+
+So, back to what Lestari said earlier, do you need my help? Or do you want to figure out yourself?]
+
+[I&#39;ll bring back that moment for you here if you need!]&lt;sayit1|
+|flashback)[
+	$lestari[Lestari: Apa ini bola $bindo[kamu]?]
+	$teguh[The boy: Ya, betul.
+	$bindo[Maaf], $bindo[aku] tidak sengaja.]
+	$lestari[Lestari: Tidak apa-apa, ini aku kembalikan.
+	Hati-hati ya.]    $narrator[Lestari give the ball to the boy.]
+	$teguh[The boy: Ya, $bindo[Terima kasih]!]
+
+	$lu[Lu: So, how do you think?]
+	]
+{
+(click-replace: ?sayit1)[
+	(show: ?flashback)
+]
+}
+[[Figure out yourself-&gt;Chapter2.1.4 - Figure out yourself]]
+	
+[[Ask Lu for guidance-&gt;Chapter2.2.4 - Lu Guidance - Terima Kasih]]
+</tw-passagedata><tw-passagedata pid="33" name="Chapter2.1.5 - Practice1" tags="" position="1270,440" size="100,100">{
+(set: $practice215 to 0)
+}
+$lu[Lu: Alright first, $bindo[terima kasih]
+Do you actually know what it means?]
+
+[$lu[How do you usually say it?]&lt;sayit1|]
+
+(click: ?sayit1)[
+	(set: _saythanks to (lowercase:(prompt: &quot;Say it for me please?&quot;, &quot;&quot;)))
+	(if: (_saythanks is &quot;thanks&quot;) or (_saythanks is &quot;thank you&quot;))[
+		(set: $practice215 to it +1)
+		(link: &quot;Great, next!&quot;)[(goto: &quot;Chapter2.1.5 - Practice2&quot;)]
+	]
+	(else:)[
+		(link: &quot;Oops, alright, next!&quot;)[(goto: &quot;Chapter2.1.5 - Practice2&quot;)]
+	]
+]</tw-passagedata><tw-passagedata pid="34" name="Chapter2.2.4.2 - Lu Guidance - Terima Kasih - Wrong" tags="" position="1123,812.5" size="100,100">$lu[Lu: Are you sure? Think about it!
+What do you say when someone does you a favor?]
+
+[[Try again-&gt;Chapter2.2.4 - Lu Guidance - Terima Kasih]]</tw-passagedata><tw-passagedata pid="35" name="Chapter2.2.4.1 - Lu Guidance - Terima Kasih - Correct" tags="" position="1277,640.5" size="100,100">$lu[Lu: Next! $bindo[aku] and $bindo[kamu].
+Well those means the same with $bindo[saya] and $bindo[anda].
+They usually use $bindo[aku] and $bindo[kamu] in a situation that does not require them to be too polite.
+
+Now it reminds me, since we&#39;ve been known each other for quite a while,
+we can use $bindo[aku] and $bindo[kamu]!
+It feels more relaxed to use them instead of $bindo[saya] and $bindo[anda], you know?]
+
+[[Now, lets rephrase it!-&gt;Chapter2.2.5 - Lu Guidance - Aku/Kamu]]</tw-passagedata><tw-passagedata pid="36" name="Chapter2.2.5 - Lu Guidance - Aku/Kamu" tags="" position="1422,633.5" size="100,100">{
+(set: $questaku to 0)
+}
+[$name: Aku...]
+[$name]&lt;correct1| || [Lu]&lt;wrong1|
+(click: ?correct1)[
+	(replace: ?wrong1)[]
+	[$lu[Lu: Awesome!]]
+	(set: $questaku to it + 1)
+]
+(click: ?wrong1)[
+	(goto: &#39;Chapter2.2.5.2 - Lu Guidance - Aku/Kamu - Wrong&#39;)
+]
+
+[$name: Kamu...]
+[$name]&lt;wrong2| || [Lu]&lt;correct2|
+
+
+(click: ?correct2)[
+	(replace: ?wrong2)[]
+	[$lu[Great!]]
+	(set: $questaku to it + 1)
+]
+(click: ?wrong2)[
+	(goto: &#39;Chapter2.2.5.2 - Lu Guidance - Aku/Kamu - Wrong&#39;)
+]
+
+{
+(live: 1.5s)[
+	(if: $questaku is 2)[
+		[[Nice! Let&#39;s move on!-&gt;Chapter2.1.6 - Lu Guidance - Conclusion1]](stop:)
+	]
+]
+}</tw-passagedata><tw-passagedata pid="37" name="Chapter2.1.6 - Lu Guidance - Conclusion1" tags="" position="1798,628.5" size="100,100">$lu[Lu: Well, you learn a lot, right?
+Now, before I send you back to Bandung,
+I need to tell you some magic words!
+
+First, $bindo[ya] and $bindo[tidak]. Basically, it is yes and $hiddenPhrase[no].
+So, for now to make it easier for you, try to reply with $bindo[ya] or $bindo[tidak] more when they talk to you!]
+
+[[Next!-&gt;Chapter2.1.6 - Lu Guidance - Conclusion2]]
+</tw-passagedata><tw-passagedata pid="38" name="Chapter2.2.5.2 - Lu Guidance - Aku/Kamu - Wrong" tags="" position="1410,795.5" size="100,100">$lu[Lu: Nope, you&#39;re wrong!]
+(if: $attemptaku1 &gt; 1)[
+$lu[Lu: Remember!
+$bindo[aku] is $bindo[saya]
+$bindo[kamu] is $bindo[anda]
+Got it?]
+]
+(set: $attemptaku1 to it +1)
+[[Try again-&gt;Chapter2.2.5 - Lu Guidance - Aku/Kamu]]</tw-passagedata><tw-passagedata pid="39" name="Chapter2.1.5 - Practice2.1" tags="" position="1397,437.5" size="100,100">$lu[Lu: Next! Regarding $bindo[aku] and $bindo[kamu].
+Can you guess what those means?]
+
+[[Answer it-&gt;Chapter2.1.5 - Practice2.2]]
+
+</tw-passagedata><tw-passagedata pid="40" name="Chapter2.1.5 - Practice2.2" tags="" position="1527,438.5" size="100,100">[$name: Aku is [.....]&lt;sayit1|]
+(click: ?sayit1)[
+	(set: _sayaku to (lowercase:(prompt: &quot;Aku is?&quot;, &quot;&quot;)))
+	(if: (_sayaku is &quot;saya&quot;) or (_sayaku is &quot;I&quot;) or (_sayaku is &quot;me&quot;))[
+		(link: &quot;Great!&quot;)[(goto: &quot;Chapter2.1.5 - Practice2.3&quot;)]
+		(set: $practice215 to it +1)
+	]
+	(else:)[
+		(link: &quot;Nope... But well&quot;)[(goto: &quot;Chapter2.1.5 - Practice2.3&quot;)]
+	]
+]</tw-passagedata><tw-passagedata pid="41" name="Chapter2.1.5 - Practice2.3" tags="" position="1648,436.5" size="100,100">[$name: Kamu is [.....]&lt;sayit1|]
+(click: ?sayit1)[
+	(set: _saykamu to (lowercase:(prompt: &quot;Kamu is?&quot;, &quot;&quot;)))
+	(if: (_saykamu is &quot;you&quot;) or (_sayakamu is &quot;anda&quot;))[
+		(link: &quot;Awesome!&quot;)[(goto: &quot;Chapter2.1.5 - Practice2.4&quot;)]
+		(set: $practice215 to it +1)
+	]
+	(else:)[
+		(link: &quot;So...&quot;)[(goto: &quot;Chapter2.1.5 - Practice2.4&quot;)]
+	]
+]</tw-passagedata><tw-passagedata pid="42" name="Chapter2.1.5 - Practice2.4" tags="" position="1782,431.5" size="100,100">$lu[Lu: Now, your result is...]
+
+(if: $practice215 is 3)[
+$lu[Looks like you really got it!]
+[[Let&#39;s move on!-&gt;Chapter2.1.6 - Lu Guidance - Conclusion1]]
+]
+(else:)[
+$lu[Looks like you need to try it again, otherwise you cannot really talk to Lestari and the rest of Bandung citizens!
+So, do you want to try again? or do you need me to guide you?]
+[[Try again-&gt;Chapter2.1.5 - Practice1]]
+[[Ask guidance from Lu-&gt;Chapter2.2.4 - Lu Guidance - Terima Kasih]]
+]</tw-passagedata><tw-passagedata pid="43" name="Chapter2.1.6 - Lu Guidance - Conclusion2" tags="" position="1966,623.5" size="100,100">Under construction
 
 [[Restart Game-&gt;Main Menu]]</tw-passagedata></tw-storydata>
 
