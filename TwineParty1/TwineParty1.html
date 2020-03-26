@@ -76,18 +76,48 @@ tw-sidebar tw-icon
 }
 
 
+tw-hook[name="tw1"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw2"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw3"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw4"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw5"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw6"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
+tw-hook[name="tw7"]
+{
+  color: #FFB500;
+  font-style: bold;
+}
 
 
 
 
 
 
-
-
-
-
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="338,160" size="100,100">$title[The Unknown World]
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Opening" tags="" position="338,159" size="100,100">$title[The Unknown World]
 
 [Can you imagine living in a world where you cannot understand any words that people say?
 
@@ -135,7 +165,7 @@ $title[Chapter 1 - Introduction]
 
 You just arrive in an unknown world and about to meet the people who live there. You might know nothing about them now, but soon you will learn....
 
-[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="759,232" size="100,100">(set: $name to (prompt: &quot;Tulis nama anda!&quot;, &quot;&quot;))
+[[Start Chapter 1-&gt;Introduction1.1]]</tw-passagedata><tw-passagedata pid="4" name="Introduction2" tags="" position="759,233" size="100,100">(set: $name to (prompt: &quot;What&#39;s your name?&quot;, &quot;&quot;))
 
 $lu[Lu: $name! What a nice name!
 Remember, in this world, it is called |targetword&gt;[nama].]
@@ -177,8 +207,15 @@ The Lady: Siapa (text-style: &quot;underline&quot;)[|targetword&gt;[nama] anda]?
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="6" name="Chapter1.2.1 - Name" tags="" position="1224,46" size="100,100">$lestari[The Lady: |targetword&gt;[Nama] anda?]
@@ -224,7 +261,7 @@ $lestari[Perkenalkan, $bindo[saya] (text-style: &quot;bold&quot;)[Lestari]] $nar
 ]
 ]
 
-[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1488,164" size="100,100">{
+[[Rephrase your and Lestari&#39;s name-&gt;Chapter1.3 - Saya/Anda]]</tw-passagedata><tw-passagedata pid="9" name="Chapter1.3 - Saya/Anda" tags="" position="1488,163" size="100,100">{
 (set: $quest1 to 0)
 }
 $narrator[You try to phrase what Lestari just did.]
@@ -365,7 +402,7 @@ Lestari just introduced you to this world. You will meet more people here and le
 Looks like you just learned something!-&gt;Chapter1.4 - ChapterEnding
 (else:) --&gt;
 Looks like you need to repeat that once again!-&gt;Chapter1.3 - Saya/Anda
-</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="182,162" size="100,100">{
+</tw-passagedata><tw-passagedata pid="16" name="Main Menu" tags="" position="182,161" size="100,100">{
 &lt;!-- Global variables --&gt;
 (set: $title to (text-style: &quot;bold&quot;) + (css: &quot;font-size: 130%;&quot;))
 }
@@ -378,7 +415,7 @@ $title[The Unknown World]
 
 [[Chapter 2 - When Someone does You a Favor-&gt;Chapter2.1 - Terima Kasih coming soon]]
 
-[[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="637,159" size="100,100">$narrator[You see something floating approaches you!]
+[[Main Menu]]</tw-passagedata><tw-passagedata pid="18" name="Introduction1.1" tags="" position="638,159" size="100,100">$narrator[You see something floating approaches you!]
 {
 &lt;img width=&quot;320&quot; height=&quot;243&quot; src=&quot;https://raw.githubusercontent.com/zakiandiga/LLVG-Spring2020/master/TwineParty1/images/spiritGuardian.png&quot;&gt;
 }
@@ -391,7 +428,7 @@ Nobody in this world can see and hear me, exept you!
 
 Can you tell me your name?]
 
-[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="19" name="Testing passage" tags="" position="391,600" size="100,100">&lt;!-- Need to seperate the part below to other passages --&gt;
+[[Tell Lu your name!-&gt;Introduction2]]</tw-passagedata><tw-passagedata pid="19" name="Testing passage" tags="" position="393,598" size="100,100">&lt;!-- Need to seperate the part below to other passages --&gt;
 |=
 This is in the leftmost column, which has a right margin of about 2 letters wide.
 -------------
@@ -400,7 +437,40 @@ This is in the right column, which has a right margin of about 5 letters wide. I
 --------------------------------
   |==|
 This text is not in columns, but takes up the entire width, as usual.
----------------</tw-passagedata><tw-passagedata pid="20" name="Introduction2Right" tags="" position="823,384" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+---------------
+
+(rotated: 1, &#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;)
+
+
+&lt;!--
+(set: $posters to (a: &quot;Radiohead&quot;, &quot;Gone with the Wind&quot;, &quot;Wu-Tang Clan&quot;, &quot;Rick and Morty&quot;, &quot;Real Madrid&quot;, &quot;Marilyn Monroe&quot;))
+A (link-repeat: &quot;[(print: $posters&#39;s 1st)]&lt;band|&quot;)[(replace: ?band)[(set: $posters to (rotated: -1, ...$posters))(print: $posters&#39;s 1st)]] poster hangs in your room.
+--&gt;
+asdf
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+asdf
+	(set: $tw1a to &quot;[Nama]&lt;tw1a|&quot;)
+	(set: $tw1b to &quot;[Name]&lt;tw1b|&quot;)
+	(set: $tw2a to &quot;[Saya]&lt;tw2a}&quot;)
+	(set: $tw2b to &quot;[I, Me]&lt;tw2b|&quot;)
+	(set: $tw3a to &quot;[Anda]&lt;tw3a|&quot;)
+	(set: $tw3b to &quot;[You]&lt;tw3b|&quot;)
+	(set: $tw4a to &quot;[Terima kasih]&lt;tw4a|&quot;)
+	(set: $tw4b to &quot;[Thank you]&lt;tw4b|&quot;)
+	(set: $tw5a to &quot;[Bantu]&lt;tw5a|&quot;)
+	(set: $tw5b to &quot;[Help]&lt;tw5b|&quot;)
+	(set: $tw6a to &quot;[Bagus]&lt;tw6a|&quot;)
+	(set: $tw6b to &quot;[Good, great, nice]&lt;tw6b|&quot;)
+	(set: $tw7a to &quot;[Buku]&lt;tw7a|&quot;)
+	(set: $tw7b to &quot;[Book]&lt;tw7b|&quot;)</tw-passagedata><tw-passagedata pid="20" name="Introduction2Right" tags="" position="823,382" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $lu[Lu: It is quite similar to how you say it in your world, right?
 So, if you ever hear or read that word, just remember that it has something to do with that!
@@ -414,8 +484,15 @@ And remember, call me if you need help!]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="introduction2wrong" tags="" position="654,381" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
@@ -765,7 +842,7 @@ $narrator[She points at you]
 	Try to immitate her!]]
 	(set: $helper to 1)
 ]
-[[She wait for your response-&gt;Chapter1.2.2 - Name3]]</tw-passagedata><tw-passagedata pid="46" name="Chapter1.2.2 - Name3" tags="" position="783,1068" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+[[She wait for your response-&gt;Chapter1.2.2 - Name3]]</tw-passagedata><tw-passagedata pid="46" name="Chapter1.2.2 - Name3" tags="" position="784,1067" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $narrator[You try to immitate her...
 
@@ -789,15 +866,39 @@ You point at yourself, then what would you say?]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
 
 
 
-</tw-passagedata><tw-passagedata pid="47" name="Untitled Passage" tags="" position="376,753.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+</tw-passagedata><tw-passagedata pid="47" name="Untitled Passage" tags="" position="376,753" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 content first column
 	&lt;/div&gt;
@@ -845,7 +946,7 @@ multiple choice
   border: 5px solid black;
   background-color: #523C29;
   text-align: center;
-</tw-passagedata><tw-passagedata pid="48" name="Untitled Passage 1" tags="" position="1747,44.5" size="100,100">$lestari[The Lady: |targetword&gt;[Nama] saya (text-style: &quot;bold&quot;)[Lestari]]   
+</tw-passagedata><tw-passagedata pid="48" name="Untitled Passage 1" tags="" position="1747,44" size="100,100">$lestari[The Lady: |targetword&gt;[Nama] saya (text-style: &quot;bold&quot;)[Lestari]]   
 
 
 $lestari[|targetword&gt;[Nama] anda, (text-style: &quot;bold&quot;)[$name]]   
@@ -873,9 +974,33 @@ $narrator[Then you point at the lady, then what would you say?]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Chapter1.2.3 - Phrase1" tags="" position="1042,371" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
@@ -897,9 +1022,33 @@ Lestari: Siapa (text-style: &quot;underline&quot;)[nama anda]?]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (text-style:&quot;bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
 
@@ -934,9 +1083,33 @@ $lestari[Lestari: Siapa |targetword&gt;[nama anda]?]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (text-style:&quot;bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Chapter1.2.2 - Phrase3" tags="" position="1039,700" size="100,100">$narrator[Looks like you just said your first sentence in this language!]
 
@@ -962,7 +1135,7 @@ Hai $name, Senang bertemu anda.]
 			]	
 		]
 	]
-]</tw-passagedata><tw-passagedata pid="53" name="Chapter1.3 - TerimaKasih" tags="" position="1043,842" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+]</tw-passagedata><tw-passagedata pid="53" name="Chapter1.3 - TerimaKasih" tags="" position="1043,841" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $lu[Lu: Then try to impress her by saying |targetword&gt;[&#39;Terima Kasih&#39;]!
 Lu: You&#39;ll learn soon what it means.]
@@ -985,32 +1158,97 @@ Lu: You&#39;ll learn soon what it means.]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (text-style:&quot;bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="54" name="Chapter1.3.1 - TerimaKasih" tags="" position="1028,987.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+</tw-passagedata><tw-passagedata pid="54" name="Chapter1.3.1 - TerimaKasih" tags="" position="1028,987" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $narrator[Lestari looks surprised!]
 
 $lestari[Lestari: Ah! Bagus!
 (text-style: &quot;underline&quot;)[Anda tahu |targetword&gt;[&#39;Terima Kasih&#39;]?]]
 
-[[You nod-&gt;Chapter1.3.2 - TerimaKasihShake]]
+[[You nod-&gt;Chapter1.3.1 - TerimaKasihNod]]
 
-[[You shake your head-&gt;Chapter1.3.1 - TerimaKasihNod]]
+[[You shake your head-&gt;Chapter1.3.2 - TerimaKasihShake]]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (text-style:&quot;bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Chapter1.3.2 - TerimaKasihShake" tags="" position="1222,958.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Chapter1.3.2 - TerimaKasihShake" tags="" position="1235,986" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 [Lu want to say something]&lt;Hint|
 (click: ?hint)[
@@ -1031,13 +1269,45 @@ Terima kasih]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="56" name="Chapter1.3.1 - TerimaKasihNod" tags="" position="1039,1162.5" size="100,100">(set: $tknod to it + 0)
+</tw-passagedata><tw-passagedata pid="56" name="Chapter1.3.1 - TerimaKasihNod" tags="" position="1108,1214" size="100,100">(set: $tknod to it + 0)
 (set: $tkshake to it +0)
 &lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
@@ -1101,14 +1371,46 @@ $lu[Lu: How do you say it in your previous world?]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
 &lt;/div&gt;
 
-			</tw-passagedata><tw-passagedata pid="57" name="Chapter1.4 - Bantu" tags="" position="1283,371.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+			</tw-passagedata><tw-passagedata pid="57" name="Chapter1.4 - Bantu" tags="" position="1283,371" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 (if: $tkshake is 0)[
 	$lestari[Lestari: [Bagus]&lt;targetword|, anda cepat belajar!
@@ -1127,13 +1429,62 @@ $narrator[She takes something out from her pocket. Something, like a card.]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih
-Bantu]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw5 to (a: &quot;Bantu&quot;, &quot;Tolong&quot;))[
+	(link-repeat: &quot;[(print: $tw5&#39;s 1st)]&lt;tw5|&quot;)[
+		(replace: ?tw5)[
+			(set:$tw5 to (rotated: 1, ...$tw5))(print:$tw5&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw6 to (a: &quot;Bagus&quot;, &quot;Good, nice&quot;))[
+	(link-repeat: &quot;[(print: $tw6&#39;s 1st)]&lt;tw6|&quot;)[
+		(replace: ?tw6)[
+			(set:$tw6 to (rotated: 1, ...$tw6))(print:$tw6&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Chapter1.3.2 - TerimaKasihShake2" tags="" position="1230,1154.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Chapter1.3.2 - TerimaKasihShake2" tags="" position="1267,1178" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $lestari[Lestari: Terima kasih!]
 $narrator[Lestari smile at you, and hint you if you notice her reaction.]
@@ -1149,19 +1500,51 @@ $narrator[Lestari smile at you, and hint you if you notice her reaction.]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Chapter1.4 - Bantu2" tags="" position="1290,566.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Chapter1.4 - Bantu2" tags="" position="1292,568" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $lestari[Lestari: (text-style: &quot;underline&quot;)[Buku saya?]]
 
 $narrator[Lestari ask you to give her back the book, and you give her the book]
 
 $lestari[Lestari: Terima kasih!]
-[Lestari: Ini bisa (text-style: &quot;underline&quot;)[bantu anda].]
+$lestari[Lestari: Ini bisa (text-style: &quot;underline&quot;)[bantu anda].]
 
 $narrator[She gives you a card... well, a kind of tablet.
 You take it, and look at it]
@@ -1169,11 +1552,11 @@ You take it, and look at it]
 (link: &quot;You touch it&#39;s front surface&quot;)[
 	(open-url: &quot;https://dictionary.cambridge.org/dictionary/indonesian-english/&quot;)]
 
-[What would you say to Lestari?]&lt;sayit1|]
+[What would you say to Lestari?]&lt;sayit1|
 
 {
 (click: ?sayit1)[
-	(set: _saythx to (lowercase:(prompt: &quot;Lestari give you something. What would you say?&quot;, &quot;&quot;)))
+	(set: _saythx to (lowercase:(prompt: &quot;Lestari give you something useful. What would you say?&quot;, &quot;&quot;)))
 	(if: _saythx is &quot;terima kasih&quot;)[
 		(replace: ?sayit1)[]
 		[[Nice!-&gt;Chapter1.4 - Bantu3]]
@@ -1187,14 +1570,71 @@ You take it, and look at it]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih
-Bantu
-Bagus]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw5 to (a: &quot;Bantu&quot;, &quot;Tolong&quot;))[
+	(link-repeat: &quot;[(print: $tw5&#39;s 1st)]&lt;tw5|&quot;)[
+		(replace: ?tw5)[
+			(set:$tw5 to (rotated: 1, ...$tw5))(print:$tw5&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw6 to (a: &quot;Bagus&quot;, &quot;Good, nice&quot;))[
+	(link-repeat: &quot;[(print: $tw6&#39;s 1st)]&lt;tw6|&quot;)[
+		(replace: ?tw6)[
+			(set:$tw6 to (rotated: 1, ...$tw6))(print:$tw6&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw7 to (a: &quot;Buku&quot;, &quot;Book&quot;))[
+	(link-repeat: &quot;[(print: $tw7&#39;s 1st)]&lt;tw7|&quot;)[
+		(replace: ?tw7)[
+			(set:$tw7 to (rotated: 1, ...$tw7))(print:$tw7&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Chapter1.4 - Bantu3" tags="" position="1290,716.5" size="100,100">(set: $quiz to 0)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Chapter1.4 - Bantu3" tags="" position="1292,716" size="100,100">(set: $quiz to 0)
 &lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
 $lu[Lu: Nice! Now you have a tool to help you learn!
@@ -1240,32 +1680,206 @@ $lu[Lu: Now, I want to play a game with you. Try to translate what I&#39;m going
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih
-Bantu
-Bagus
-Buku]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw5 to (a: &quot;Bantu&quot;, &quot;Tolong&quot;))[
+	(link-repeat: &quot;[(print: $tw5&#39;s 1st)]&lt;tw5|&quot;)[
+		(replace: ?tw5)[
+			(set:$tw5 to (rotated: 1, ...$tw5))(print:$tw5&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw6 to (a: &quot;Bagus&quot;, &quot;Good, nice&quot;))[
+	(link-repeat: &quot;[(print: $tw6&#39;s 1st)]&lt;tw6|&quot;)[
+		(replace: ?tw6)[
+			(set:$tw6 to (rotated: 1, ...$tw6))(print:$tw6&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw7 to (a: &quot;Buku&quot;, &quot;Book&quot;))[
+	(link-repeat: &quot;[(print: $tw7&#39;s 1st)]&lt;tw7|&quot;)[
+		(replace: ?tw7)[
+			(set:$tw7 to (rotated: 1, ...$tw7))(print:$tw7&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Chapter1.4 - End" tags="" position="1459,727.5" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Chapter1.4 - End" tags="" position="1459,726" size="100,100">&lt;div class=&quot;gridhint-wrapper&quot;&gt;
 	&lt;div class=&quot;gridhint-content&quot;&gt;
-$lu[Lu: Nice! You at leaset know $quiz new word from this world!]
+$lu[Lu: Nice! You just understand $quiz new word(s) from this world!]
 
 
-[[To be continue-&gt;Chapter2.1 - Terima Kasih coming soon]]
+[[To be continue-&gt;Main Menu]]
 	&lt;/div&gt;
 	&lt;div class=&quot;gridhint-rightbar&quot;&gt;
 (Text-style: &quot;Bold&quot;)[Glossary]
-|targetword&gt;[Nama
-Saya
-Anda
-Terima kasih
-Bagus
-Bantu
-Buku]
+{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw5 to (a: &quot;Bantu&quot;, &quot;Tolong&quot;))[
+	(link-repeat: &quot;[(print: $tw5&#39;s 1st)]&lt;tw5|&quot;)[
+		(replace: ?tw5)[
+			(set:$tw5 to (rotated: 1, ...$tw5))(print:$tw5&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw6 to (a: &quot;Bagus&quot;, &quot;Good, nice&quot;))[
+	(link-repeat: &quot;[(print: $tw6&#39;s 1st)]&lt;tw6|&quot;)[
+		(replace: ?tw6)[
+			(set:$tw6 to (rotated: 1, ...$tw6))(print:$tw6&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw7 to (a: &quot;Buku&quot;, &quot;Book&quot;))[
+	(link-repeat: &quot;[(print: $tw7&#39;s 1st)]&lt;tw7|&quot;)[
+		(replace: ?tw7)[
+			(set:$tw7 to (rotated: 1, ...$tw7))(print:$tw7&#39;s 1st)
+			]
+		]
+	]	
+}
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="Coming soon" tags="" position="1459,877.5" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="Coming soon" tags="" position="1459,877" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="63" name="Target Words script" tags="" position="442,895" size="100,100">{
+(set: $tw1 to (a: &quot;Nama&quot;, &quot;Name&quot;))[
+	(link-repeat: &quot;[(print: $tw1&#39;s 1st)]&lt;tw1|&quot;)[
+		(replace: ?tw1)[
+			(set:$tw1 to (rotated: 1, ...$tw1))(print:$tw1&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw2 to (a: &quot;Saya&quot;, &quot;I, me&quot;))[
+	(link-repeat: &quot;[(print: $tw2&#39;s 1st)]&lt;tw2|&quot;)[
+		(replace: ?tw2)[
+			(set:$tw2 to (rotated: 1, ...$tw2))(print:$tw2&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw3 to (a: &quot;Anda&quot;, &quot;You&quot;))[
+	(link-repeat: &quot;[(print: $tw3&#39;s 1st)]&lt;tw3|&quot;)[
+		(replace: ?tw3)[
+			(set:$tw3 to (rotated: 1, ...$tw3))(print:$tw3&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw4 to (a: &quot;Terima kasih&quot;, &quot;Thank you&quot;))[
+	(link-repeat: &quot;[(print: $tw4&#39;s 1st)]&lt;tw4|&quot;)[
+		(replace: ?tw4)[
+			(set:$tw4 to (rotated: 1, ...$tw4))(print:$tw4&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw5 to (a: &quot;Bantu&quot;, &quot;Tolong&quot;))[
+	(link-repeat: &quot;[(print: $tw5&#39;s 1st)]&lt;tw5|&quot;)[
+		(replace: ?tw5)[
+			(set:$tw5 to (rotated: 1, ...$tw5))(print:$tw5&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw6 to (a: &quot;Bagus&quot;, &quot;Good, nice&quot;))[
+	(link-repeat: &quot;[(print: $tw6&#39;s 1st)]&lt;tw6|&quot;)[
+		(replace: ?tw6)[
+			(set:$tw6 to (rotated: 1, ...$tw6))(print:$tw6&#39;s 1st)
+			]
+		]
+	]	
+}
+{
+(set: $tw7 to (a: &quot;Buku&quot;, &quot;Book&quot;))[
+	(link-repeat: &quot;[(print: $tw7&#39;s 1st)]&lt;tw7|&quot;)[
+		(replace: ?tw7)[
+			(set:$tw7 to (rotated: 1, ...$tw7))(print:$tw7&#39;s 1st)
+			]
+		]
+	]	
+}</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
